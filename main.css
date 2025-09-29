@@ -1,0 +1,126 @@
+body {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+body, input, select, button, a {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: black;
+}
+
+.toolbar {
+  font-size: 14px;
+  width: 100%;
+  background-color: #888;
+  color: white;
+  padding: 10px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toolbarRight {
+  margin-left: auto;
+  padding-right: 30px;
+}
+
+#container {
+    display: flex;
+    width: 95%;
+    margin: auto;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-group .formGroupLabel {
+    width: 40%;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.form-group {
+    flex: 1;
+}
+
+select {
+    flex: 1;
+    width: 100%;
+}
+
+.rangeInput[type="range"] {
+  width: 50%;
+}
+
+.rangeInput[type="text"] {
+    width: 40px;
+}
+
+.input[type="text"] {
+    width: 100%;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 10;
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f0f0f0;
+    display: block;
+    z-index: 20;
+}
+
+.popup {
+    position: fixed;
+    max-height: 90vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 20;
+    border-radius: 5px;
+    overflow-y: auto;
+}
+
+.popupButton {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.errorDetail {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+#versionSpan {
+  color: #ccc;
+  margin-right: 20px;
+}
