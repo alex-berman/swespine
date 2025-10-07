@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialogstöd inom ryggkirurgi – baserat på Svenska Ryggregistret Swespine</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="tool.css">
+    <link rel="stylesheet" href="libs/accordion.css">
+    <script src="libs/accordion.min.js"></script>
+</head>
+<body onLoad="initialize()">
+    <div class="toolbar">
+        <div>Dialogstöd inom ryggkirurgi &ndash; baserat på Svenska Ryggregistret Swespine</div>
+        <div class="toolbarRight">
+            <span id="versionSpan"></span>
+            <button onClick="savePatientData()">Spara patientuppgifter till fil</button>
+            <button onClick="promptEndSession()">Avsluta sessionen</button>
+        </div>
+    </div>
+    <div id="container">
+        <div id="left-section">
+            <div class="tabs" id="tabs"></div>
+            <div class="tab-content" id="tab-content" style="padding-top: 20px;"></div>
+        </div>
+        <div id="right-section">
+            <div class="tabs">
+                <button class="tab-button tab-button-prediction" data-tab="satisfaction">
+                    <div class="predictionHeader">Sannolikhet att bli nöjd</div>
+                    <div class="prediction" id="tab_prediction_satisfaction"></div>
+                </button>
+
+                <button class="tab-button tab-button-prediction active" data-tab="ga">
+                    <div class="predictionHeader">Sannolikhet för lyckat utfall</div>
+                    <div class="prediction" id="tab_prediction_ga"></div>
+                </button>
+
+                <button class="tab-button tab-button-prediction" data-tab="stay">
+                    <div class="predictionHeader">Förväntad vårdtid</div>
+                    <div class="prediction" id="tab_prediction_stay"></div>
+                </button>
+            </div>
+
+            <div class="tab-content">
+                <div id="satisfaction" class="tab-pane tab-pane-prediction">
+                    <div id="probabilitiesPieChart_satisfaction"></div>
+                    <div class="textBelowPieChart">Pajdiagrammet visar sannolikheten att bli nöjd respektive tveksam/missnöjd efter en hypotetisk operation, baserat på vald patientprofil.</div>
+                    <div id="explanationSection_satisfaction"></div>
+                </div>
+
+                <div id="ga" class="tab-pane tab-pane-prediction active">
+                    <div id="probabilitiesPieChart_ga"></div>
+                    <div class="textBelowPieChart">Pajdiagrammet visar sannolikheten för olika smärtnivåer efter en hypotetisk operation, baserat på vald patientprofil.</div>
+                    <div id="explanationSection_ga"></div>
+                </div>
+
+                <div id="stay" class="tab-pane tab-pane-prediction">
+                    <div id="predictionElaboration_stay" class="predictionElaboration"></div>
+                    <div id="explanationSection_stay"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loader" class="loader"></div>
+    <div id="overlay" class="overlay"></div>
+    <div id="popup" class="popup">
+
+    <script type="module">
+        import { initializePredictionTool, getProfileValues, setProfileValues, savePatientData, promptEndSession } from "./main.js";
+        import { VERSION } from "../version.js";
+        window.initialize = function() {
+          document.getElementById('versionSpan').innerHTML = 'Version ' + VERSION;
+          initializePredictionTool();
+        };
+        window.getProfileValues = getProfileValues;
+        window.setProfileValues = setProfileValues;
+        window.savePatientData = savePatientData;
+        window.promptEndSession = promptEndSession;
+    </script>
+    <script src="libs/plotly-2.11.1.min.js"></script>
+    <script src="libs/jstat-1.9.6.min.js"></script>
+</body>
+</html>

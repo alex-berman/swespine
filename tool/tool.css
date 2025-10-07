@@ -1,0 +1,329 @@
+#left-section {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+}
+
+#right-section {
+    flex: 2;
+    display: flex;
+    border-left: 1px solid #ddd;
+    flex-direction: column;
+}
+
+.right-section-divider {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-top: 2px solid #888;
+}
+
+.tabs {
+    display: flex;
+    background-color: #333;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 15px;
+    color: white;
+    background-color: #333;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+.tab-button.active {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+
+.tab-button:not(.active) {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.tab-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.formHeader, .explanationHeader {
+  font-size: 18px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+}
+
+.formWidgets {
+  margin-bottom: 24px;
+}
+
+.box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.predictionHeader {
+  font-size: 14px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.prediction {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.globalExplanationContainer {
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+.square {
+    width: 1em;
+    height: 1em;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #000000;
+    margin-right: 10px;
+}
+
+.globalExplanationsTableHeader {
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: top;
+  text-align: left;
+}
+
+.globalExplanationsTableContent {
+  padding: 10px;
+  vertical-align: top;
+  text-align: left;
+}
+
+td {
+  padding: 0;
+}
+
+.localExplanationsTable {
+    width: 670px;
+    border-collapse: collapse;
+}
+
+.tick {
+    font-size: 14px;
+}
+
+.featureContributionsHeader {
+  padding-bottom: 5px;
+}
+
+.labelCell {
+    height: 30px;
+    vertical-align: left;
+    width: 200px;
+}
+
+.contentCell {
+    width: 400px;
+    position: relative;
+    text-align: center;
+}
+
+.localExplanationBottomLine {
+  font-weight: bold;
+}
+
+.featureLabel {
+  padding-left: 16px;
+  height: 30px;
+}
+
+.toggleMoreLessCell {
+  height: 20px;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #444;
+  cursor: pointer;
+}
+
+.nonFeatureLabel {
+  height: 30px;
+}
+
+.predictionContinuousRange {
+  width: 100%;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.predictionIntegerRange {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  margin: 20px auto;
+  border-top: 2px solid #ccc;
+  margin-top: 30px;
+}
+
+.predictionIntegerTickContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.predictionIntegerTick {
+  position: absolute;
+  width: 1px;
+  height: 10px;
+  background-color: #666;
+  margin-top: -5px;
+}
+
+.predictionIntegerLabel {
+  font-size: 14px;
+  text-align: center;
+  margin-left: -3px;
+}
+
+.predictionMarkerForContinuousRange {
+  height: 20px;
+  background: #eee8;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.predictionMarkerForIntegerRange {
+  top: -8px;
+  height: 14px;
+  width: 14px;
+  background-color: rgb(77, 200, 129);
+  border-radius: 50%;
+}
+
+.predictionIntervalForIntegerRange {
+  margin-top: -16px;
+  height: 2px;
+  background-color: rgb(77, 200, 129);
+}
+
+.predictionIntervalForIntegerRange::before,
+.predictionIntervalForIntegerRange::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 16px;
+  background-color: rgb(77, 200, 129);
+}
+
+.predictionIntervalForIntegerRange::before {
+  left: 0;
+  top: -7px;
+}
+
+.predictionIntervalForIntegerRange::after {
+  right: 0;
+  top: -7px;
+}
+
+.verticalLine {
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  background-color: #ddd;
+  top: 0px;
+  left: 50%;
+}
+
+.verticalSpace {
+  padding-top: 15px;
+}
+
+.bar {
+  position: absolute;
+  height: 20px;
+  top: calc(50% - 10px);
+  background-color: #ddd;
+}
+
+.radio-group {
+    display: flex;
+    gap: 10px;
+}
+
+.radio-group label {
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #333;
+}
+
+.radio-group input[type="radio"] {
+    display: none;
+}
+
+.radio-group input[type="radio"] + label {
+    background-color: #f0f0f0;
+    color: #555;
+}
+
+.radio-group input[type="radio"]:checked + label {
+    background-color: #333;
+    color: #fff;
+}
+
+.textBelowPieChart {
+  padding-bottom: 20px;
+}
+
+.textBelowFeatureContributions {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+li {
+  padding-bottom: 4px;
+}
+
+.predictionElaboration {
+  width: 95%;
+  border-radius: 10px;
+  border: 2px solid #eee;
+  padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.predictionElaborationTop {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.predictionElaborationMain {
+  font-size: 28px;
+  font-weight: bold;
+}
