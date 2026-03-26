@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialogstöd inom ryggkirurgi – baserat på Svenska Ryggregistret Swespine</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="registration/registration.css">
+</head>
+<body onLoad="initializeForm()">
+    <div class="toolbar">
+        <div>Dialogstöd inom ryggkirurgi &ndash; baserat på Svenska Ryggregistret Swespine</div>
+        <div class="toolbarRight">
+            <span id="versionSpan"></span>
+            <button onClick="promptEndSession()">Avbryt sessionen</button>
+        </div>
+    </div>
+    <div id="pageContent"></div>
+
+    <script type="module">
+        import { initializeForm, promptEndSession, showNarcoticsExamples, showMorphineExamples, showNervePainMedicationExamples } from "./registration/registration.js";
+        import { VERSION } from "./version.js";
+        window.initializeForm = function() {
+          document.getElementById('versionSpan').innerHTML = 'Version ' + VERSION;
+          initializeForm('pageContent');
+        };
+        window.promptEndSession = promptEndSession;
+        window.showNarcoticsExamples = showNarcoticsExamples;
+        window.showMorphineExamples = showMorphineExamples;
+        window.showNervePainMedicationExamples = showNervePainMedicationExamples;
+    </script>
+
+    <div id="overlay" class="overlay"></div>
+    <div id="popup" class="popup">
+</body>
+</html>
